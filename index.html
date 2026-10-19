@@ -348,6 +348,118 @@ Alhamdulillah for everything, and thanks for visiting my portfolio ❤️
 
     <script src="script.js"></script>
 </script>
+    
+<!-- Nabil Digital Clock -->
+<div id="nabil-clock">
+  <div class="clock-label">⌚ NABIL DIGITAL CLOCK</div>
+  <div id="clock-time">00:00:00</div>
+  <div id="clock-date">Loading date...</div>
+  <div class="clock-status">
+    <span class="clock-dot"></span> LIVE TIME
+  </div>
+</div>
+
+<style>
+#nabil-clock {
+  position: fixed;
+  left: 20px;
+  bottom: 25px;
+  z-index: 9997;
+  width: 225px;
+  padding: 17px;
+  background: rgba(12, 12, 18, .95);
+  color: #fff;
+  border: 1px solid #e63946;
+  border-radius: 15px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 20px #e6394633;
+  backdrop-filter: blur(10px);
+}
+
+.clock-label {
+  color: #ff4655;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+#clock-time {
+  font-size: 31px;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px #e63946;
+}
+
+#clock-date {
+  color: #bbb;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.clock-status {
+  margin-top: 12px;
+  font-size: 10px;
+  color: #ff4655;
+  letter-spacing: 2px;
+}
+
+.clock-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #ff4655;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: clockPulse 1s infinite alternate;
+}
+
+@keyframes clockPulse {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  #nabil-clock {
+    width: 180px;
+    left: 10px;
+    bottom: 15px;
+    padding: 12px;
+  }
+
+  #clock-time {
+    font-size: 25px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function updateNabilClock() {
+    const now = new Date();
+
+    document.getElementById("clock-time").textContent =
+      now.toLocaleTimeString("en-GB", {
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+
+    document.getElementById("clock-date").textContent =
+      now.toLocaleDateString("en-GB", {
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+  }
+
+  updateNabilClock();
+  setInterval(updateNabilClock, 1000);
+})();
+</script>
+
 
 <footer class="footer">
     <a class="logo" href="#home">Nabil El Kamel<span>.</span></a>
