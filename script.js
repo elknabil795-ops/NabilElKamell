@@ -294,9 +294,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelectorAll(".star").forEach(star => {
-    star.addEventListener("click", () => {
-        star.classList.toggle("active");
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".stars .star").forEach(star => {
+        star.addEventListener("click", () => {
+            star.classList.toggle("active");
+        });
     });
 });
-
