@@ -294,4 +294,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+window.addEventListener("load", function () {
+    const welcome = document.getElementById("welcome-screen");
+
+    if (welcome) {
+        setTimeout(function () {
+            welcome.classList.add("hide");
+        }, 2500);
+    }
+});
+
 
