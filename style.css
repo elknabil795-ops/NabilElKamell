@@ -1081,3 +1081,22 @@ body::after {
   outline: 2px solid #ff465e;
   outline-offset: 4px;
 }
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.star {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.star.active {
+    color: red;
+}
