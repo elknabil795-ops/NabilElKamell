@@ -293,3 +293,10 @@ document.addEventListener("DOMContentLoaded", () => {
     aiInput.focus();
   });
 });
+
+document.querySelectorAll(".star").forEach(star => {
+    star.addEventListener("click", () => {
+        star.classList.toggle("active");
+    });
+});
+
