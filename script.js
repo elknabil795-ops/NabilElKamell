@@ -294,18 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("load", function () {
-    const welcome = document.getElementById("welcome-screen");
 
-    if (welcome) {
-        setTimeout(function () {
-            welcome.classList.add("hide");
-        }, 2500);
-    }
-});
-
-document.getElementById("enter-btn")?.addEventListener("click", function () {
-    document.getElementById("welcome-screen").classList.add("hide");
-});
 
 
