@@ -293,4 +293,49 @@ document.addEventListener("DOMContentLoaded", () => {
     aiInput.focus();
   });
 });
+/* =========================
+   ABOUT HACKER EFFECTS
+========================= */
+
+const command = document.querySelector(".command");
+
+if(command){
+
+const text = "$ whoami";
+command.textContent="";
+
+let i=0;
+
+const typing=setInterval(()=>{
+
+command.textContent += text.charAt(i);
+i++;
+
+if(i>=text.length){
+
+clearInterval(typing);
+
+}
+
+},120);
+
+}
+
+/* Glow Hover */
+
+document.querySelectorAll(".skill-card").forEach(card=>{
+
+card.addEventListener("mousemove",()=>{
+
+card.style.boxShadow="0 0 30px rgba(230,57,70,.45)";
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.boxShadow="";
+
+});
+
+});
 
