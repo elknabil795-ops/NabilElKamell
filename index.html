@@ -348,6 +348,80 @@ Alhamdulillah for everything, and thanks for visiting my portfolio ❤️
 
     <script src="script.js"></script>
 
+<!-- Screenshot Button -->
+<button id="screenshotBtn" type="button">
+  📸 Screenshot
+</button>
+
+<style>
+#screenshotBtn {
+  position: fixed;
+  right: 22px;
+  bottom: 25px;
+  z-index: 9998;
+  padding: 12px 18px;
+  background: #e63946;
+  color: white;
+  border: 1px solid #ff6670;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #e6394655;
+  transition: .25s;
+}
+
+#screenshotBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px #e63946;
+}
+
+#screenshotBtn:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+</style>
+
+<!-- Screenshot Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+document.getElementById("screenshotBtn").addEventListener("click", async function () {
+  const button = this;
+  const originalText = button.innerHTML;
+
+  if (typeof html2canvas === "undefined") {
+    alert("Screenshot library failed to load. Check your internet connection.");
+    return;
+  }
+
+  button.disabled = true;
+  button.innerHTML = "⏳ Capturing...";
+
+  try {
+    const canvas = await html2canvas(document.body, {
+      useCORS: true,
+      allowTaint: false,
+      scale: 2,
+      backgroundColor: null,
+      ignoreElements: element =>
+        element.id === "screenshotBtn"
+    });
+
+    const link = document.createElement("a");
+    link.download = "nabil-website-screenshot.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  } catch (error) {
+    console.error("Screenshot error:", error);
+    alert("Could not capture the page. Please try again.");
+  } finally {
+    button.disabled = false;
+    button.innerHTML = originalText;
+  }
+});
+</script>
+
 </script>
 
 <footer class="footer">
