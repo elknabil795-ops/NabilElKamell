@@ -348,7 +348,99 @@ Alhamdulillah for everything, and thanks for visiting my portfolio ❤️
 
     <script src="script.js"></script>
 </script>
-    
+ 
+<!-- Nabil Custom Cursor -->
+<div id="nabil-cursor"></div>
+<div id="nabil-cursor-glow"></div>
+
+<style>
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+
+  #nabil-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ff304f;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width .2s, height .2s, background .2s;
+  }
+
+  #nabil-cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ff304f20;
+    box-shadow: 0 0 20px #ff304f35;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+  }
+
+  #nabil-cursor.hover {
+    width: 24px;
+    height: 24px;
+    background: #ff304f35;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const cursor = document.getElementById("nabil-cursor");
+  const glow = document.getElementById("nabil-cursor-glow");
+
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    cursor.remove();
+    glow.remove();
+    return;
+  }
+
+  let mouseX = -100;
+  let mouseY = -100;
+  let glowX = -100;
+  let glowY = -100;
+
+  document.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    cursor.style.left = mouseX + "px";
+    cursor.style.top = mouseY + "px";
+  });
+
+  function animateGlow() {
+    glowX += (mouseX - glowX) * 0.18;
+    glowY += (mouseY - glowY) * 0.18;
+
+    glow.style.left = glowX + "px";
+    glow.style.top = glowY + "px";
+
+    requestAnimationFrame(animateGlow);
+  }
+
+  animateGlow();
+
+  document.addEventListener("mouseover", (event) => {
+    if (event.target.closest("a, button, input, textarea, select, [role='button']")) {
+      cursor.classList.add("hover");
+    } else {
+      cursor.classList.remove("hover");
+    }
+  });
+})();
+</script>
+   
 <footer class="footer">
     <a class="logo" href="#home">Nabil El Kamel<span>.</span></a>
     <p>Built while learning, with curiosity and ambition.</p>
