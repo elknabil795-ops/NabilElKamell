@@ -304,4 +304,8 @@ window.addEventListener("load", function () {
     }
 });
 
+document.getElementById("enter-btn")?.addEventListener("click", function () {
+    document.getElementById("welcome-screen").classList.add("hide");
+});
+
 
