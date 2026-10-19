@@ -1105,6 +1105,40 @@ body::after {
     border-color: #e63946;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.navbar .nav-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.navbar .language-switch {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    position: static !important;
+    margin: 0 !important;
+    transform: none !important;
+    order: 0;
+}
+
+.navbar #themeBtn {
+    order: 1;
+    margin: 0 !important;
+}
+
+.navbar #menuBtn {
+    order: 2;
+    margin: 0 !important;
+}
+
 
 
 
