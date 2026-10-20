@@ -263,16 +263,11 @@ document.addEventListener("DOMContentLoaded", () => {
         : "Learn HTML, CSS, and JavaScript for web development, or Python for programming fundamentals.";
     }
 
-    if (includesAny(["robot", "روبوت", "الروبوتات"])) {
-      return aiLanguage === "ar"
-        ? "الروبوتات تجمع بين البرمجة والإلكترونيات وأجهزة الاستشعار."
-        : "Robotics combines programming, electronics, and sensors.";
-    }
 
     if (includesAny(["nabil", "نبيل", "about", "من أنت", "من هو"])) {
       return aiLanguage === "ar"
-        ? "أنا AI / ST، مساعد موقع نبيل الكاملي من وجدة، المغرب. يهتم نبيل بالبرمجة والشبكات والأمن السيبراني والروبوتات."
-        : "I am AI / ST, the assistant for Nabil El Kamel's website. Nabil is from Oujda, Morocco, and is interested in programming, networking, cybersecurity, and robotics.";
+        ? "أنا AI / ST، مساعد موقع نبيل الكاملي من وجدة، المغرب. يهتم نبيل بالبرمجة والشبكات والأمن السيبراني ."
+        : "I am AI / ST, the assistant for Nabil El Kamel's website. Nabil is from Oujda, Morocco, and is interested in programming, networking, and cybersecurity.";
     }
 
     return aiLanguage === "ar"
